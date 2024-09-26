@@ -1,13 +1,5 @@
-name:/Lama
-age:/21
-country:/Saudi Arabia
-name:/Bayader
-age:/21
-country:/Saudi Arabia
-name:/Batool
-age:/21
-country:/Saudi Arabia
-name:/Najah
-age:/21
-country:/Saudi Arabia
-
+Name,Age,Country
+Lama,21,Saudi Arabia
+Bayader,20,Saudi Arabia
+Batool,21,Saudi Arabia
+Najah,21,Saudi Arabia

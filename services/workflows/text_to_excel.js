@@ -3,15 +3,13 @@ const xlsx = require('xlsx');
 
 // Read text from the .txt file
 const readTextFile = (filePath) => {
-    return fs.readFileSync(filePath, 'utf8');//why 'utf8'? This ensures that any special characters are read correctly
-    
+    return fs.readFileSync(filePath, 'utf8');//why 'utf8'? This ensures that any special characters are read correctly  
 };
 
 // Convert text to array based on a delimiter
 const convertTextToArray = (text, delimiter = '\n') => {
-    return text.split(delimiter).map(line => line.split('/'));
+    return text.split(delimiter).map(line => line.split(','));
 };
-
 // Write array to Excel file
 const writeToExcel = (data, outputFilePath) => {
     const worksheet = xlsx.utils.aoa_to_sheet(data);//This method converts the two-dimensional array data into a worksheet format.
@@ -19,7 +17,6 @@ const writeToExcel = (data, outputFilePath) => {
     xlsx.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
     xlsx.writeFile(workbook, outputFilePath);
 };
-
 // Main function
 const main = () => {
     const inputFilePath = 'input.txt'; 
@@ -36,6 +33,5 @@ const main = () => {
 
     console.log('Data has been written to Excel file:', outputFilePath);
 };
-
 // Run the main function
 main();
